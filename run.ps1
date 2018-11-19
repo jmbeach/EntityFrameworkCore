@@ -113,15 +113,11 @@ function Get-KoreBuild {
         try {
             $tmpfile = Join-Path ([IO.Path]::GetTempPath()) "KoreBuild-$([guid]::NewGuid()).zip"
             Get-RemoteFile $remotePath $tmpfile $ToolsSourceSuffix
-            if (Get-Command -Name 'Expand-Archive' -ErrorAction Ignore) {
-                # Use built-in commands where possible as they are cross-plat compatible
-                Expand-Archive -Path $tmpfile -DestinationPath $korebuildPath
-            }
-            else {
+
                 # Fallback to old approach for old installations of PowerShell
                 Add-Type -AssemblyName System.IO.Compression.FileSystem
                 [System.IO.Compression.ZipFile]::ExtractToDirectory($tmpfile, $korebuildPath)
-            }
+
         }
         catch {
             Remove-Item -Recurse -Force $korebuildPath -ErrorAction Ignore

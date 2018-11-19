@@ -12,6 +12,11 @@
     <GenerateDocumentationFile>false</GenerateDocumentationFile>
     <CodeAnalysisRuleSet>..\EFCore.ruleset</CodeAnalysisRuleSet>
     <NuspecFile>$(MSBuildProjectName).nuspec</NuspecFile>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DebugType>full</DebugType>
+    <DebugSymbols>true</DebugSymbols>
   </PropertyGroup>
 
   <ItemGroup>

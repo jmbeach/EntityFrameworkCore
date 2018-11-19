@@ -8,6 +8,11 @@
     <RootNamespace>Microsoft.EntityFrameworkCore.Tools</RootNamespace>
   </PropertyGroup>
 
+  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|netcoreapp2.0|AnyCPU'">
+    <DebugType>full</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+
   <ItemGroup>
     <Compile Include="..\Shared\CodeAnnotations.cs" />
     <Compile Include="..\EFCore\Internal\ProductInfo.cs" />

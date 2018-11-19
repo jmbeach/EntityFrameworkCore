@@ -13,6 +13,12 @@
     <IncludeSymbols>false</IncludeSymbols>
     <DisableImplicitFrameworkReferences>true</DisableImplicitFrameworkReferences>
     <EnableApiCheck>false</EnableApiCheck>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DebugType>full</DebugType>
+    <DebugSymbols>true</DebugSymbols>
   </PropertyGroup>
 
   <ItemGroup>

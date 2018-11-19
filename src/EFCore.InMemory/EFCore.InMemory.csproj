@@ -9,6 +9,12 @@
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <PackageTags>$(PackageTags);In-Memory</PackageTags>
     <CodeAnalysisRuleSet>..\EFCore.ruleset</CodeAnalysisRuleSet>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DebugType>full</DebugType>
+    <DebugSymbols>true</DebugSymbols>
   </PropertyGroup>
 
   <ItemGroup>

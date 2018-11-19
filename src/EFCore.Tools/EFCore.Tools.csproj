@@ -21,6 +21,12 @@ Scaffold-DbContext
 Script-Migrations
 Update-Database
   </Description>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DebugType>full</DebugType>
+    <DebugSymbols>true</DebugSymbols>
   </PropertyGroup>
 
   <ItemGroup>
@@ -59,9 +65,7 @@ Update-Database
 
   <Import Project="Sdk.targets" Sdk="Microsoft.NET.Sdk" />
 
-  <Target Name="Compile"
-    Inputs="$(MSBuildAllProjects);@(GeneratedContent)"
-    Outputs="@(GeneratedContent->'$(TargetDir)%(FileName)'">
+  <Target Name="Compile" Inputs="$(MSBuildAllProjects);@(GeneratedContent)" Outputs="@(GeneratedContent-&gt;'$(TargetDir)%(FileName)'">
     <Sdk_GenerateFileFromTemplate TemplateFile="%(GeneratedContent.Identity)" OutputPath="$(TargetDir)%(FileName)" Properties="%(Properties)" />
   </Target>
 

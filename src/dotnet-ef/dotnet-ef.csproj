@@ -25,6 +25,11 @@ dotnet ef database update
     <NuspecFile>$(MSBuildProjectName).nuspec</NuspecFile>
   </PropertyGroup>
 
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DebugType>full</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+
   <ItemGroup>
     <Compile Include="..\ef\CommandLineUtils\*.cs" />
     <Compile Include="..\ef\Commands\CommandBase.cs" />
